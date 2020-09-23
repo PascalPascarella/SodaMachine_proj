@@ -4,7 +4,16 @@ using System.Text;
 
 namespace SodaMachine
 {
-	class Nickle
+	class Nickle : Coin
 	{
+		// Member Variables
+
+		// Constructor
+		public Nickle()
+		{
+
+		}
+		// Member Method
+
 	}
 }

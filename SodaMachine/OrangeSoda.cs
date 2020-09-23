@@ -4,7 +4,16 @@ using System.Text;
 
 namespace SodaMachine
 {
-	class OrangeSoda
+	class OrangeSoda : Can
 	{
+		// Member Variables
+
+		// Constructor
+		public OrangeSoda()
+		{
+
+		}
+		// Member Method
+
 	}
 }

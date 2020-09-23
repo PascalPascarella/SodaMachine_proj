@@ -6,5 +6,14 @@ namespace SodaMachine
 {
 	class Backpack
 	{
+		// Member Variables
+		public List<Can> cans;
+		// Constructor
+		public Backpack()
+		{
+
+		}
+		// Member Method
+
 	}
 }

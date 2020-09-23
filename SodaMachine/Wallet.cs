@@ -6,5 +6,16 @@ namespace SodaMachine
 {
 	class Wallet
 	{
+		// Member Variables
+		public List<Coin> coins;
+		public Card card;
+
+		// Constructor
+		public Wallet()
+		{
+
+		}
+		// Member Method
+
 	}
 }
