@@ -4,15 +4,11 @@ using System.Text;
 
 namespace SodaMachine
 {
-	class UserInterface
+	static class UserInterface
 	{
 		// Member Variables
 
-		// Constructor
-		public UserInterface()
-		{
 
-		}
 		// Member Method
 
 	}
