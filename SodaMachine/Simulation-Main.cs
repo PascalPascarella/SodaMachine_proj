@@ -17,7 +17,10 @@ namespace SodaMachine
 		// Member Method
 		public void Main()
 		{
-			Console.WriteLine("Sim run");
+			UserInterface.Meet();
+			UserInterface.Greet();
+			UserInterface.NavigationPrompt();
+
 		}
 
 	}
