@@ -8,14 +8,16 @@ namespace SodaMachine
 	{
 		// Member Variables
 		static string userName;
+
+
 		// Member Method
 		public static string Meet()
 		{
-			Console.WriteLine("Please enter your first name");
+			Console.Write("Hello, Customer! Please enter your first name: ");
 			userName = Console.ReadLine();
 			return userName;
 		}
-		public static void Greet()
+		public static void Acknowledge()
 		{
 			Console.WriteLine($"Thank you, {userName}!");
 		}

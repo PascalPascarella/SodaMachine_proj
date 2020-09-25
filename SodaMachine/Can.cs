@@ -7,8 +7,8 @@ namespace SodaMachine
 	abstract class Can
 	{
 		// Member Variables
-		protected double cost;
-		public double Cost;
+		protected int cost;
+		public int Cost;
 		public string name;
 		// Constructor
 		public Can()

@@ -11,7 +11,8 @@ namespace SodaMachine
 		// Constructor
 		public Cola()
 		{
-
+			name = "Coke";
+			cost = 35;
 		}
 		// Member Method
 

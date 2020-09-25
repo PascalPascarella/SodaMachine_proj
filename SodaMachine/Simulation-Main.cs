@@ -18,7 +18,7 @@ namespace SodaMachine
 		public void Main()
 		{
 			UserInterface.Meet();
-			UserInterface.Greet();
+			UserInterface.Acknowledge();
 			UserInterface.NavigationPrompt();
 
 		}
