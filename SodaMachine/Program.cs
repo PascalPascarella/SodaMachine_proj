@@ -6,8 +6,8 @@ namespace SodaMachine
 	{
 		static void Main(string[] args)
 		{
-			Simulation_Main SodaMachine1 = new Simulation_Main();
-			SodaMachine1.Main();
+			Simulation_Main Sim1 = new Simulation_Main();
+			Sim1.Main();
 		}
 	}
 }
