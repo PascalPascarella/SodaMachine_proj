@@ -19,7 +19,7 @@ namespace SodaMachine
 		}
 		public static void Acknowledge()
 		{
-			Console.WriteLine($"Thank you, {userName}!");
+			Console.WriteLine($"Thank you!");
 		}
 		public static void NavigationPrompt()
 		{

@@ -21,7 +21,7 @@ namespace SodaMachine
 			UserInterface.Meet();
 			UserInterface.Acknowledge();
 			UserInterface.NavigationPrompt();
-
+			sodaMachine.ListerTester();
 		}
 
 	}
