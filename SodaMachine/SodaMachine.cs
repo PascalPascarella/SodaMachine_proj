@@ -13,7 +13,8 @@ namespace SodaMachine
 		// Constructor
 		public SodaMachine()
 		{
-
+			register = new List<Coin>();
+			inventory = new List<Can>();
 		}
 		// Member Method
 

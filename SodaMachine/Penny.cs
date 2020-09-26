@@ -11,7 +11,8 @@ namespace SodaMachine
 		// Constructor
 		public Penny()
 		{
-
+			name = "Penny";
+			value = 1;
 		}
 		// Member Method
 

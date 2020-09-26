@@ -13,7 +13,7 @@ namespace SodaMachine
 		// Constructor
 		public Wallet()
 		{
-
+			coins = new List<Coin>();
 		}
 		// Member Method
 

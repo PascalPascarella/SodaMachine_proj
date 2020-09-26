@@ -12,7 +12,8 @@ namespace SodaMachine
 		// Constructor
 		public Simulation_Main()
 		{
-
+			sodaMachine = new SodaMachine();
+			customer = new Customer();
 		}
 		// Member Method
 		public void Main()

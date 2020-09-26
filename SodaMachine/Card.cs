@@ -8,11 +8,11 @@ namespace SodaMachine
 	{
 		// Member Variables
 		private int availableFunds;
-		public int AvailableFunds;
+		public int AvailableFunds { get { return availableFunds; } }
 		// Constructor
 		public Card()
 		{
-
+			availableFunds = 2000;		// 2000 cents or $20.00
 		}
 		// Member Method
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace SodaMachine
@@ -11,7 +12,8 @@ namespace SodaMachine
 		// Constructor
 		public Nickle()
 		{
-
+			name = "Nickle";
+			value = 5;
 		}
 		// Member Method
 

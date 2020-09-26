@@ -11,7 +11,8 @@ namespace SodaMachine
 		// Constructor
 		public Quarter()
 		{
-
+			name = "Quarter";
+			value = 25;
 		}
 		// Member Method
 

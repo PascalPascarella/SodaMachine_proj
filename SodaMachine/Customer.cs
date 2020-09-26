@@ -13,7 +13,8 @@ namespace SodaMachine
 		// Constructor
 		public Customer()
 		{
-
+			wallet = new Wallet();
+			backpack = new Backpack();
 		}
 		// Member Method
 

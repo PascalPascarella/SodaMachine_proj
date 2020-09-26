@@ -11,7 +11,7 @@ namespace SodaMachine
 		// Constructor
 		public Backpack()
 		{
-
+			cans = new List<Can>();
 		}
 		// Member Method
 
