@@ -8,7 +8,7 @@ namespace SodaMachine
 	class SodaMachine
 	{
 		// Member Variables
-		public List<Coin> register;
+		public List<Coin> till;
 		public List<Can> inventory;
 		public List<Quarter> quarters;
 		public List<Dime> dimes;
@@ -18,7 +18,7 @@ namespace SodaMachine
 		// Constructor
 		public SodaMachine()
 		{
-			register = new List<Coin>();
+			till = new List<Coin>();
 			inventory = new List<Can>();
 			quarters = new List<Quarter>();
 			dimes = new List<Dime>();
@@ -28,15 +28,7 @@ namespace SodaMachine
 		// Member Method
 		public void ListerTester()
 		{
-			Register.AddCoinToList(4, quarters);
-			Register.AddCoinToList(4, nickles);
-			Console.WriteLine("Quarter count at: " + quarters.Count);
-			Register.RemoveCoin(2, quarters);
-			Console.WriteLine("Quarter count at: " + quarters.Count);
-			Register.RemoveCoin(1, quarters);
-			Console.WriteLine("Quarter count at: " + quarters.Count);
-			Register.RemoveCoin(1, quarters);
-			Console.WriteLine("Quarter count at: " + quarters.Count);
+
 		}
 	}
 }

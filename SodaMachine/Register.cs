@@ -58,28 +58,28 @@ namespace SodaMachine
 				pennies.Add(Penny());
 			}
 		}
-		public static void RemoveCoin(int outgoing,List<Quarter> quarters)
+		public static void RemoveCoinFromList(int outgoing,List<Quarter> quarters)
 		{
 			for (int i = 0; i < outgoing; i++)
 			{
 				quarters.RemoveAt(0);
 			}
 		}
-		public static void RemoveCoin(int outgoing, List<Dime> dimes)
+		public static void RemoveCoinFromList(int outgoing, List<Dime> dimes)
 		{
 			for (int i = 0; i < outgoing; i++)
 			{
 				dimes.RemoveAt(0);
 			}
 		}
-		public static void RemoveCoin(int outgoing, List<Nickle> nickles)
+		public static void RemoveCoinFromList(int outgoing, List<Nickle> nickles)
 		{
 			for (int i = 0; i < outgoing; i++)
 			{
 				nickles.RemoveAt(0);
 			}
 		}
-		public static void RemoveCoin(int outgoing, List<Penny> pennies)
+		public static void RemoveCoinFromList(int outgoing, List<Penny> pennies)
 		{
 			for (int i = 0; i < outgoing; i++)
 			{
