@@ -35,7 +35,8 @@ namespace SodaMachine
 		// Member Method
 		public void ListerTester()
 		{
-			till.Add(quarters);
+			Register.AddCoinToList(20, quarters);
+			Console.WriteLine(quarters.Count);
 		}
 	}
 }
