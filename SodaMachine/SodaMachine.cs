@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
@@ -8,7 +9,7 @@ namespace SodaMachine
 	class SodaMachine
 	{
 		// Member Variables
-		public List<Coin> till;
+		public ArrayList till;
 		public List<Can> inventory;
 		public List<Quarter> quarters;
 		public List<Dime> dimes;
@@ -18,7 +19,13 @@ namespace SodaMachine
 		// Constructor
 		public SodaMachine()
 		{
-			till = new List<Coin>();
+			till = new ArrayList()
+			{
+				quarters,
+				dimes,
+				nickles,
+				pennies
+			};
 			inventory = new List<Can>();
 			quarters = new List<Quarter>();
 			dimes = new List<Dime>();
@@ -28,7 +35,7 @@ namespace SodaMachine
 		// Member Method
 		public void ListerTester()
 		{
-
+			till.Add(quarters);
 		}
 	}
 }

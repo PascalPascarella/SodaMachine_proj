@@ -9,6 +9,7 @@ namespace SodaMachine
 		// Member Variables
 
 		// Member Methods
+		// Coin Builders
 		public static Quarter Quarter()
 		{
 			Quarter quarter = new Quarter();
@@ -29,7 +30,7 @@ namespace SodaMachine
 			Penny penny = new Penny();
 			return penny;
 		}
-
+		// List Builders
 		public static void AddCoinToList(int incoming, List<Quarter> quarters)
 		{
 			for (int i = 0; i < incoming; i++)
@@ -58,6 +59,7 @@ namespace SodaMachine
 				pennies.Add(Penny());
 			}
 		}
+		// List Removers
 		public static void RemoveCoinFromList(int outgoing,List<Quarter> quarters)
 		{
 			for (int i = 0; i < outgoing; i++)
