@@ -38,9 +38,12 @@ namespace SodaMachine
 		{
 			Console.WriteLine($"The current balance is {(cardAvailableFunds*.01):c} on your card and {(coinsInWallet * .01):c} in your wallet.");
 		}
-		public static void SodaCheck()
+		public static void SodaCheck(string cola, string orangeSoda, string rootBeer)
 		{
-
+			Console.WriteLine("We have 3 beverages for selection:" +
+				$"\n{cola}" +
+				$"\n{orangeSoda}" +
+				$"\n{rootBeer}");
 		}
 		public static void BuySoda()
 		{
@@ -53,8 +56,33 @@ namespace SodaMachine
 			Console.WriteLine($"Our available sodas are: " +
 				$"\n C1  ({(colaCost * .01):c}) {cola}: {colasAvailable} are available for purchase!" +
 				$"\n C2  ({(osCost * .01):c}) {orangeSoda}: {orangeSodasAvailable} are available for purchase!" +
-				$"\n C3  ({(rbCost * .01):c}) {rootBeer}: {rootBeersAvailable} are available for purchase!");
+				$"\n C3  ({(rbCost * .01):c}) {rootBeer}: {rootBeersAvailable} are available for purchase!" + 
+				"\nPlease select one of the items above (C1/C2/C3)");
 		}
+		// Enter Change
+		public static void EnterChange()
+		{
+			Console.WriteLine("What will you be depositing? " +
+				"\n  Press 1 for Quarters." +
+				"\n  Press 2 for Dimes." +
+				"\n  Press 3 for Nickels." +
+				"\n  Press 4 for Pennies.");
+		}
+
+		// Dispense Drink
+		public static void DispenseDrink(Cola soda)
+		{
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+		}
+		public static void DispenseDrink(OrangeSoda soda)
+		{
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+		}
+		public static void DispenseDrink(RootBeer soda)
+		{
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+		}
+		// Dispense Change
 
 		// Continue Message
 		public static void EnterToContinue()

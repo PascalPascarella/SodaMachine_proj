@@ -11,6 +11,7 @@ namespace SodaMachine
 		public Customer customer;
 		public int userInput;
 		public bool validChoice;
+		public string sodaSelection;
 		// Constructor
 		public Simulation_Main()
 		{
@@ -46,6 +47,7 @@ namespace SodaMachine
 					UserInterface.EnterToContinue();
 					break;
 				case 2:
+					UserInterface.SodaCheck(sodaMachine.colas[0].name, sodaMachine.orangeSodas[0].name, sodaMachine.rootBeers[0].name);
 					UserInterface.EnterToContinue();
 					break;
 				case 3:
@@ -69,7 +71,8 @@ namespace SodaMachine
 		public void NavMenu02()
 		{
 			sodaMachine.SodasCostAndAvailable();
-			userInput = Convert.ToInt32(Console.ReadLine());
+			sodaSelection = Console.ReadLine();
+
 		}
 	}
 }
