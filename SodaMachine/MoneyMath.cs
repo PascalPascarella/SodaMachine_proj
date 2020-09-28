@@ -16,7 +16,39 @@ namespace SodaMachine
 			foreach (Coin coin in coins)
 			{
 				listValueTotal += coin.Value;
-
+			}
+			double LVT = listValueTotal * .01;
+			Console.WriteLine($"The sum total value of this list is currently {LVT:c}");
+			return listValueTotal;
+		}
+		public static int GetListValue(List<Dime> coins)
+		{
+			listValueTotal = 0;
+			foreach (Coin coin in coins)
+			{
+				listValueTotal += coin.Value;
+			}
+			double LVT = listValueTotal * .01;
+			Console.WriteLine($"The sum total value of this list is currently {LVT:c}");
+			return listValueTotal;
+		}
+		public static int GetListValue(List<Nickle> coins)
+		{
+			listValueTotal = 0;
+			foreach (Coin coin in coins)
+			{
+				listValueTotal += coin.Value;
+			}
+			double LVT = listValueTotal * .01;
+			Console.WriteLine($"The sum total value of this list is currently {LVT:c}");
+			return listValueTotal;
+		}
+		public static int GetListValue(List<Penny> coins)
+		{
+			listValueTotal = 0;
+			foreach (Coin coin in coins)
+			{
+				listValueTotal += coin.Value;
 			}
 			double LVT = listValueTotal * .01;
 			Console.WriteLine($"The sum total value of this list is currently {LVT:c}");
