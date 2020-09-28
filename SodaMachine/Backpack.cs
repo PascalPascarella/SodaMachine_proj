@@ -40,6 +40,11 @@ namespace SodaMachine
 			CanPackager.AddCanToList(inputRootBeerNumber, colas);
 		}
 
-		
+		// Local Can Counter
+		public int CansInPack()
+		{
+			int canCount = colas.Count + orangeSodas.Count + rootBeers.Count;
+			return canCount;
+		}
 	}
 }

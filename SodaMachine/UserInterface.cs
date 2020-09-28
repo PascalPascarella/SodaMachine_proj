@@ -34,9 +34,9 @@ namespace SodaMachine
 				"\nPress 2 to view our list of drink options." +
 				"\nPress 3 to make a drink selection.");
 		}
-		public static void BalanceCheck(int cardAvailableFunds, int coinsInWallet)
+		public static void BalanceCheck(int cardAvailableFunds, int coinsInWallet, int cansInPack)
 		{
-			Console.WriteLine($"The current balance is {(cardAvailableFunds*.01):c} on your card and {(coinsInWallet * .01):c} in your wallet.");
+			Console.WriteLine($"The current balance is {(cardAvailableFunds*.01):c} on your card and {(coinsInWallet * .01):c} in your wallet. You also appear to have {cansInPack} cans in your pack.");
 		}
 		public static void SodaCheck(string cola, string orangeSoda, string rootBeer)
 		{

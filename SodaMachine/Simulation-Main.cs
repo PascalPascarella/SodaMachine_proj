@@ -43,7 +43,7 @@ namespace SodaMachine
 			switch (userInput)
 			{
 				case 1:
-					UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals);
+					UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
 					UserInterface.EnterToContinue();
 					break;
 				case 2:
@@ -70,9 +70,26 @@ namespace SodaMachine
 		// Nav Menu 02
 		public void NavMenu02()
 		{
-			sodaMachine.SodasCostAndAvailable();
-			sodaSelection = Console.ReadLine();
-
+			validChoice = false;
+			while (validChoice == false)
+			{
+				sodaMachine.SodasCostAndAvailable();
+				sodaSelection = Console.ReadLine();
+				DepositCoins(); // --> TODO: Not complete
+			}
+		}
+		public void DepositCoins()
+		{
+			validChoice = false;
+			while (validChoice == false)
+			{
+				UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
+			}
+		}
+		public void DepositNav()
+		{
+			UserInterface.EnterChange();
+			userInput = 0;
 		}
 	}
 }
