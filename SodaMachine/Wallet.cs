@@ -41,6 +41,8 @@ namespace SodaMachine
 			Console.WriteLine(nickles.Count + "Nickles");
 			Register.AddCoinToList(23, pennies);
 			Console.WriteLine(pennies.Count + "Pennies");
+			MoneyMath.GetListValue(quarters);
 		}
+
 	}
 }
