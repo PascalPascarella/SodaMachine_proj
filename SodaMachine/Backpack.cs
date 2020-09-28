@@ -26,14 +26,20 @@ namespace SodaMachine
 			rootBeers = new List<RootBeer>();
 		}
 		// Member Method
-		public void CanListerTester()
+		// Load Cans Into Backpack
+		public void LoadCans(int inputColaNumber, List<Cola> cans)
 		{
-			CanPackager.AddCanToList(21, colas);
-			Console.WriteLine(colas.Count + "Colas");
-			CanPackager.AddCanToList(11, orangeSodas);
-			Console.WriteLine(orangeSodas.Count + "Orange Sodas");
-			CanPackager.AddCanToList(19, rootBeers);
-			Console.WriteLine(rootBeers.Count + "Root Beers");
+			CanPackager.AddCanToList(inputColaNumber, colas);
 		}
+		public void LoadCans(int inputOrangeSodaNumber, List<OrangeSoda> cans)
+		{
+			CanPackager.AddCanToList(inputOrangeSodaNumber, colas);
+		}
+		public void LoadCans(int inputRootBeerNumber, List<RootBeer> cans)
+		{
+			CanPackager.AddCanToList(inputRootBeerNumber, colas);
+		}
+
+		
 	}
 }

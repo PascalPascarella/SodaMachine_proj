@@ -11,7 +11,7 @@ namespace SodaMachine
 		// Constructor
 		public OrangeSoda()
 		{
-			name = "Crush";
+			name = "Orange Crush";
 			cost = 6;
 		}
 		// Member Method

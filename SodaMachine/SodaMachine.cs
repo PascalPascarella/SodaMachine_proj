@@ -15,7 +15,9 @@ namespace SodaMachine
 		public List<Dime> dimes;
 		public List<Nickle> nickles;
 		public List<Penny> pennies;
-
+		public List<Cola> colas;
+		public List<OrangeSoda> orangeSodas;
+		public List<RootBeer> rootBeers;
 		// Constructor
 		public SodaMachine()
 		{
@@ -31,18 +33,36 @@ namespace SodaMachine
 			dimes = new List<Dime>();
 			nickles = new List<Nickle>();
 			pennies = new List<Penny>();
+			colas = new List<Cola>();
+			orangeSodas = new List<OrangeSoda>();
+			rootBeers = new List<RootBeer>();
+			LoadCans();
+			LoadCoins();
 		}
 		// Member Method
-		public void CoinListerTester()
+		// Load Coins Into Soda Machine
+		public void LoadCoins()
 		{
 			Register.AddCoinToList(20, quarters);
-			Console.WriteLine(quarters.Count + "Quarters");
 			Register.AddCoinToList(10, dimes);
-			Console.WriteLine(dimes.Count + "Dimes");
 			Register.AddCoinToList(20, nickles);
-			Console.WriteLine(nickles.Count + "Nickles");
 			Register.AddCoinToList(50, pennies);
-			Console.WriteLine(pennies.Count + "Pennies");
+		}
+		// Load Cans Into Soda Machine
+		public void LoadCans()
+		{
+			CanPackager.AddCanToList(21, colas);
+			CanPackager.AddCanToList(11, orangeSodas);
+			CanPackager.AddCanToList(19, rootBeers);
+		}
+		// Available Sodas and Cost
+		public void SodasCostAndAvailable()
+		{
+			UserInterface.SodaAvailable(
+				colas.Count, orangeSodas.Count, rootBeers.Count,
+				colas[0].name, colas[0].Cost,
+				orangeSodas[0].name, orangeSodas[0].Cost,
+				rootBeers[0].name, rootBeers[0].Cost);
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace SodaMachine
 		// Constructor
 		public RootBeer()
 		{
-			name = "IBC";
+			name = "IBC Root Beer";
 			cost = 60;
 		}
 		// Member Method

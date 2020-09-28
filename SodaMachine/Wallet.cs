@@ -14,10 +14,12 @@ namespace SodaMachine
 		public List<Nickle> nickles;
 		public List<Penny> pennies;
 		public Card card;
+		public int totals;
 
 		// Constructor
 		public Wallet()
 		{
+			card = new Card();
 			coins = new ArrayList()
 			{
 				quarters,
@@ -41,11 +43,11 @@ namespace SodaMachine
 			Console.WriteLine(nickles.Count + "Nickles");
 			Register.AddCoinToList(23, pennies);
 			Console.WriteLine(pennies.Count + "Pennies");
-			double totals = .01 * (
+			totals =
 				MoneyMath.GetListValue(quarters) +
 				MoneyMath.GetListValue(dimes) +
 				MoneyMath.GetListValue(nickles) +
-				MoneyMath.GetListValue(pennies));
+				MoneyMath.GetListValue(pennies);
 			Console.WriteLine($"{ totals:c}");
 		}
 
