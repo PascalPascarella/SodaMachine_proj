@@ -21,7 +21,9 @@ namespace SodaMachine
 			UserInterface.Meet();
 			UserInterface.Acknowledge();
 			UserInterface.NavigationPrompt();
-			sodaMachine.ListerTester();
+			sodaMachine.CoinListerTester();
+			customer.backpack.CanListerTester();
+			customer.wallet.CoinListerTester();
 		}
 
 	}
