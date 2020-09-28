@@ -51,9 +51,9 @@ namespace SodaMachine
 		// Load Cans Into Soda Machine
 		public void LoadCans()
 		{
-			CanPackager.AddCanToList(21, colas);
-			CanPackager.AddCanToList(11, orangeSodas);
-			CanPackager.AddCanToList(19, rootBeers);
+			//CanPackager.AddCanToList(21, colas);
+			//CanPackager.AddCanToList(11, orangeSodas);
+			//CanPackager.AddCanToList(19, rootBeers);
 		}
 		// Available Sodas and Cost
 		public void SodasCostAndAvailable()
