@@ -14,7 +14,6 @@ namespace SodaMachine
 		public List<Nickle> nickles;
 		public List<Penny> pennies;
 		public Card card;
-		public int totals;
 
 		// Constructor
 		public Wallet()
@@ -31,25 +30,61 @@ namespace SodaMachine
 			dimes = new List<Dime>();
 			nickles = new List<Nickle>();
 			pennies = new List<Penny>();
+			LoadCoins();
+			CoinTotals();
 		}
-		// Member Method
-		public void CoinListerTester()
+		// Member Methods
+		// Load Coins
+		public void LoadCoins()
 		{
 			Register.AddCoinToList(22, quarters);
-			Console.WriteLine(quarters.Count + "Quarters");
 			Register.AddCoinToList(25, dimes);
-			Console.WriteLine(dimes.Count + "Dimes");
 			Register.AddCoinToList(20, nickles);
-			Console.WriteLine(nickles.Count + "Nickles");
 			Register.AddCoinToList(23, pennies);
-			Console.WriteLine(pennies.Count + "Pennies");
-			totals =
+		}
+		public int CoinTotals()
+		{
+			int i =
 				MoneyMath.GetListValue(quarters) +
 				MoneyMath.GetListValue(dimes) +
 				MoneyMath.GetListValue(nickles) +
 				MoneyMath.GetListValue(pennies);
-			Console.WriteLine($"{ totals:c}");
+			return i;
+		}
+		// Local Coin Adders
+		public void AddCoins(int coinNumber, List<Quarter> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Dime> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Nickle> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Penny> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
 		}
 
+		// Local Coin Removers
+		public void RemoveCoins(int coinNumber, List<Quarter> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Dime> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Nickle> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Penny> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
 	}
 }

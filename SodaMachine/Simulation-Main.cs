@@ -45,7 +45,7 @@ namespace SodaMachine
 			switch (userInput)
 			{
 				case 1:		// User Balances
-					UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
+					UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.CoinTotals(), customer.backpack.CansInPack());
 					UserInterface.EnterToContinue();
 					break;
 				case 2:		// Soda Choices
@@ -86,7 +86,7 @@ namespace SodaMachine
 			while (validChoice == false)
 			{
 				UserInterface.EnterToContinue();
-				UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
+				UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.CoinTotals(), customer.backpack.CansInPack());
 				DepositNav();
 			}
 		}
@@ -99,40 +99,60 @@ namespace SodaMachine
 		}
 		public void CoinSelectValidate()
 		{
-			switch (userInput)
+			if (customer.wallet.CoinTotals() > 0)
 			{
-				case 1:		// User chooses quarter
-					UserInterface.EnterChangeAmount();
-					depositedAmount += UserInputInt() * 25;
-					UserInterface.EnterChangeConfirm(depositedAmount);
-					break;
-				case 2:		// User chooses dime
-					UserInterface.EnterChangeAmount();
-					depositedAmount += UserInputInt() * 10;
-					UserInterface.EnterChangeConfirm(depositedAmount);
-					break;
-				case 3:		// User chooses nickel
-					UserInterface.EnterChangeAmount();
-					depositedAmount += UserInputInt() * 5;
-					UserInterface.EnterChangeConfirm(depositedAmount);
-					break;
-				case 4:		// User chooses penny
-					UserInterface.EnterChangeAmount();
-					depositedAmount += UserInputInt();
-					UserInterface.EnterChangeConfirm(depositedAmount);
-					break;
-				case 5:   // User completes deposit
-					UserInterface.EnterChangeConfirm(depositedAmount);
-					UserInterface.EnterToContinue();
-					validChoice = true;
-					break;
-				default:
-					UserInterface.ValidationError();
-					UserInterface.EnterToContinue();
-					break;
+				switch (userInput)
+				{
+					case 1:   // User chooses quarter
+						UserInterface.EnterChangeAmount();
+						int iQ = UserInputInt();
+						depositedAmount += iQ * 25;
+						UserInterface.EnterChangeConfirm(depositedAmount);
+						customer.wallet.RemoveCoins(iQ, customer.wallet.quarters);
+						sodaMachine.AddCoins(iQ, sodaMachine.quarters);
+						break;
+					case 2:   // User chooses dime
+						UserInterface.EnterChangeAmount();
+						int iD = UserInputInt();
+						depositedAmount += iD * 10;
+						UserInterface.EnterChangeConfirm(depositedAmount);
+						customer.wallet.RemoveCoins(iD, customer.wallet.dimes);
+						sodaMachine.AddCoins(iD, sodaMachine.dimes);
+						break;
+					case 3:   // User chooses nickel
+						UserInterface.EnterChangeAmount();
+						int iN = UserInputInt();
+						depositedAmount += iN * 5;
+						UserInterface.EnterChangeConfirm(depositedAmount);
+						customer.wallet.RemoveCoins(iN, customer.wallet.nickles);
+						sodaMachine.AddCoins(iN, sodaMachine.nickles);
+						break;
+					case 4:   // User chooses penny
+						UserInterface.EnterChangeAmount();
+						int iP = UserInputInt();
+						depositedAmount += iP;
+						UserInterface.EnterChangeConfirm(depositedAmount);
+						customer.wallet.RemoveCoins(iP, customer.wallet.pennies);
+						sodaMachine.AddCoins(iP, sodaMachine.pennies);
+						break;
+					case 5:   // User completes deposit
+						UserInterface.EnterChangeConfirm(depositedAmount);
+						UserInterface.EnterToContinue();
+						validChoice = true;
+						break;
+					default:
+						UserInterface.ValidationError();
+						UserInterface.EnterToContinue();
+						break;
+				}
+			}
+			else
+			{
+				UserInterface.ValidationErrorNoMoney();
+				UserInterface.EnterToContinue();
 			}
 		}
-		
+
 		// User Input to Int
 		public int UserInputInt()
 		{

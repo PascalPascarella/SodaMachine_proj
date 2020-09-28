@@ -105,5 +105,9 @@ namespace SodaMachine
 		{
 			Console.WriteLine($"Apologies, {userName}, please try selecting an option again.");
 		}
+		public static void ValidationErrorNoMoney()
+		{
+			Console.WriteLine($"Apologies, {userName}, please come back when you have money.");
+		}
 	}
 }
