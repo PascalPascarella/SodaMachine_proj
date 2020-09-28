@@ -14,6 +14,7 @@ namespace SodaMachine
 		public List<Nickle> nickles;
 		public List<Penny> pennies;
 		public Card card;
+		public int total;
 
 		// Constructor
 		public Wallet()
@@ -31,7 +32,7 @@ namespace SodaMachine
 			nickles = new List<Nickle>();
 			pennies = new List<Penny>();
 			LoadCoins();
-			CoinTotals();
+			total = CoinTotals();
 		}
 		// Member Methods
 		// Load Coins

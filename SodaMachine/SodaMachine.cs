@@ -99,5 +99,18 @@ namespace SodaMachine
 		{
 			Register.RemoveCoinFromList(coinNumber, coins);
 		}
+		// Local Can Unloader 
+		public void UnLoadCans(int inputColaNumber, List<Cola> cans)
+		{
+			CanPackager.RemoveCanFromList(inputColaNumber, colas);
+		}
+		public void UnLoadCans(int inputOrangeSodaNumber, List<OrangeSoda> cans)
+		{
+			CanPackager.RemoveCanFromList(inputOrangeSodaNumber, colas);
+		}
+		public void UnLoadCans(int inputRootBeerNumber, List<RootBeer> cans)
+		{
+			CanPackager.RemoveCanFromList(inputRootBeerNumber, colas);
+		}
 	}
 }

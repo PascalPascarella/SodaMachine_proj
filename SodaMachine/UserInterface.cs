@@ -81,15 +81,15 @@ namespace SodaMachine
 		// Dispense Drink
 		public static void DispenseDrink(Cola soda)
 		{
-			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda.name}!");
 		}
 		public static void DispenseDrink(OrangeSoda soda)
 		{
-			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda.name}!");
 		}
 		public static void DispenseDrink(RootBeer soda)
 		{
-			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda}!");
+			Console.WriteLine($"Thank you for choosing us for your beverage needs! Here comes your {soda.name}!");
 		}
 		// Dispense Change
 

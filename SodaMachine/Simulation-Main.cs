@@ -28,6 +28,7 @@ namespace SodaMachine
 			UserInterface.NavigationPrompt();
 			NavMenu01();
 			NavMenu02();
+			
 
 		}
 
@@ -78,6 +79,7 @@ namespace SodaMachine
 				sodaMachine.SodasCostAndAvailable();
 				sodaSelection = UserInputInt();
 				DepositCoins();
+				
 			}
 		}
 		public void DepositCoins()
@@ -88,6 +90,8 @@ namespace SodaMachine
 				UserInterface.EnterToContinue();
 				UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.CoinTotals(), customer.backpack.CansInPack());
 				DepositNav();
+				SodaToUser(); // --> TODO
+				UserInterface.EnterToContinue();
 			}
 		}
 		public void DepositNav()
@@ -152,12 +156,64 @@ namespace SodaMachine
 				UserInterface.EnterToContinue();
 			}
 		}
+		public void SodaToUser()
+		{
+			if(depositedAmount > sodaMachine.colas[0].Cost || depositedAmount > sodaMachine.orangeSodas[0].Cost || depositedAmount > sodaMachine.rootBeers[0].Cost)
+			switch (sodaSelection)
+			{
+				case 1:   // Spit out coke
+						if (sodaMachine.colas.Count > 0)
+							UserInterface.DispenseDrink(sodaMachine.colas[0]);
+							sodaMachine.UnLoadCans(1, sodaMachine.colas);
+							customer.backpack.LoadCans(1, customer.backpack.colas);
+							customer.wallet.total += depositedAmount - sodaMachine.colas[0].Cost;
+						depositedAmount = 0;
+						UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.total, customer.backpack.CansInPack());
+						break;
+				case 2:   // Spit out crush
+						if (sodaMachine.orangeSodas.Count > 0)
+							UserInterface.DispenseDrink(sodaMachine.orangeSodas[0]);
+							sodaMachine.UnLoadCans(1, sodaMachine.orangeSodas);
+							customer.backpack.LoadCans(1, customer.backpack.orangeSodas);
+							customer.wallet.total += depositedAmount - sodaMachine.orangeSodas[0].Cost;
+						depositedAmount = 0;
+						UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.total, customer.backpack.CansInPack());
+						break;
+				case 3:   // Spit out IBC
+						if (sodaMachine.rootBeers.Count > 0)
+							UserInterface.DispenseDrink(sodaMachine.rootBeers[0]);
+							sodaMachine.UnLoadCans(1, sodaMachine.rootBeers);
+							customer.backpack.LoadCans(1, customer.backpack.rootBeers);
+							customer.wallet.total += depositedAmount - sodaMachine.rootBeers[0].Cost;
+						depositedAmount = 0;
+						UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.total, customer.backpack.CansInPack());
+						break;
+				default:
+					UserInterface.ValidationErrorNoMoney();
+					UserInterface.EnterToContinue();
+					break;
+			}
+			else
+			{
+				UserInterface.ValidationErrorNoMoney();
+				UserInterface.EnterToContinue();
+			}
+		}
 
 		// User Input to Int
 		public int UserInputInt()
 		{
-			int i = Convert.ToInt32(Console.ReadLine());
-			return i;
+			int i;
+			bool isINT = false;
+			while (isINT == false)
+			{
+				i = Convert.ToInt32(Console.ReadLine());
+				isINT = true;
+				return i;
+			}
+			UserInterface.ValidationError();
+			int no = 0;
+			return no;
 		}
 	}
 }
