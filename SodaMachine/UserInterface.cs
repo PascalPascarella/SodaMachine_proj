@@ -54,10 +54,10 @@ namespace SodaMachine
 		public static void SodaAvailable(int colasAvailable, int orangeSodasAvailable, int rootBeersAvailable, string cola, double colaCost, string orangeSoda, double osCost, string rootBeer, double rbCost)
 		{
 			Console.WriteLine($"Our available sodas are: " +
-				$"\n C1  ({(colaCost * .01):c}) {cola}: {colasAvailable} are available for purchase!" +
-				$"\n C2  ({(osCost * .01):c}) {orangeSoda}: {orangeSodasAvailable} are available for purchase!" +
-				$"\n C3  ({(rbCost * .01):c}) {rootBeer}: {rootBeersAvailable} are available for purchase!" + 
-				"\nPlease select one of the items above (C1/C2/C3)");
+				$"\n 1  ({(colaCost * .01):c}) {cola}: {colasAvailable} are available for purchase!" +
+				$"\n 2  ({(osCost * .01):c}) {orangeSoda}: {orangeSodasAvailable} are available for purchase!" +
+				$"\n 3  ({(rbCost * .01):c}) {rootBeer}: {rootBeersAvailable} are available for purchase!" + 
+				"\nPlease select one of the items above (1/2/3)");
 		}
 		// Enter Change
 		public static void EnterChange()
@@ -66,7 +66,16 @@ namespace SodaMachine
 				"\n  Press 1 for Quarters." +
 				"\n  Press 2 for Dimes." +
 				"\n  Press 3 for Nickels." +
-				"\n  Press 4 for Pennies.");
+				"\n  Press 4 for Pennies." +
+				"\n  Press 5 when done depositing.");
+		}
+		public static void EnterChangeAmount()
+		{
+			Console.WriteLine("How many coins will you be depositing?");
+		}
+		public static void EnterChangeConfirm(int coins)
+		{
+			Console.WriteLine($"You have entered {(coins*.01):c} in total, {userName}.");
 		}
 
 		// Dispense Drink
@@ -87,7 +96,7 @@ namespace SodaMachine
 		// Continue Message
 		public static void EnterToContinue()
 		{
-			Console.WriteLine($"Please press any key to continue, {userName}");
+			Console.WriteLine($"Please press Enter/Return key to continue, {userName}");
 			Console.ReadLine();
 			Console.Clear();
 		}

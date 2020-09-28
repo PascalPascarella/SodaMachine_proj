@@ -64,5 +64,40 @@ namespace SodaMachine
 				orangeSodas[0].name, orangeSodas[0].Cost,
 				rootBeers[0].name, rootBeers[0].Cost);
 		}
+		// Local Coin Adders
+		public void AddCoins(int coinNumber, List<Quarter> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Dime> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Nickle> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+		public void AddCoins(int coinNumber, List<Penny> coins)
+		{
+			Register.AddCoinToList(coinNumber, coins);
+		}
+
+		// Local Coin Removers
+		public void RemoveCoins(int coinNumber, List<Quarter> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Dime> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Nickle> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
+		public void RemoveCoins(int coinNumber, List<Penny> coins)
+		{
+			Register.RemoveCoinFromList(coinNumber, coins);
+		}
 	}
 }

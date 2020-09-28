@@ -11,12 +11,14 @@ namespace SodaMachine
 		public Customer customer;
 		public int userInput;
 		public bool validChoice;
-		public string sodaSelection;
+		public int sodaSelection;
+		public int depositedAmount;
 		// Constructor
 		public Simulation_Main()
 		{
 			sodaMachine = new SodaMachine();
 			customer = new Customer();
+			depositedAmount = 0;
 		}
 		// Member Method
 		public void Main()
@@ -42,15 +44,15 @@ namespace SodaMachine
 		{
 			switch (userInput)
 			{
-				case 1:
+				case 1:		// User Balances
 					UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
 					UserInterface.EnterToContinue();
 					break;
-				case 2:
+				case 2:		// Soda Choices
 					UserInterface.SodaCheck(sodaMachine.colas[0].name, sodaMachine.orangeSodas[0].name, sodaMachine.rootBeers[0].name);
 					UserInterface.EnterToContinue();
 					break;
-				case 3:
+				case 3:		// Soda Details and exit loop
 					UserInterface.BuySoda();
 					UserInterface.EnterToContinue();
 					validChoice = true;
@@ -64,7 +66,7 @@ namespace SodaMachine
 		public int BalanceOrSoda()
 		{
 			UserInterface.Navigation00();
-			userInput = Convert.ToInt32(Console.ReadLine());
+			userInput = UserInputInt();
 			return userInput;
 		}
 		// Nav Menu 02
@@ -74,8 +76,8 @@ namespace SodaMachine
 			while (validChoice == false)
 			{
 				sodaMachine.SodasCostAndAvailable();
-				sodaSelection = Console.ReadLine();
-				DepositCoins(); // --> TODO: Not complete
+				sodaSelection = UserInputInt();
+				DepositCoins();
 			}
 		}
 		public void DepositCoins()
@@ -83,13 +85,59 @@ namespace SodaMachine
 			validChoice = false;
 			while (validChoice == false)
 			{
+				UserInterface.EnterToContinue();
 				UserInterface.BalanceCheck(customer.wallet.card.AvailableFunds, customer.wallet.totals, customer.backpack.CansInPack());
+				DepositNav();
 			}
 		}
 		public void DepositNav()
 		{
 			UserInterface.EnterChange();
-			userInput = 0;
+			userInput = UserInputInt();
+			CoinSelectValidate();
+
+		}
+		public void CoinSelectValidate()
+		{
+			switch (userInput)
+			{
+				case 1:		// User chooses quarter
+					UserInterface.EnterChangeAmount();
+					depositedAmount += UserInputInt() * 25;
+					UserInterface.EnterChangeConfirm(depositedAmount);
+					break;
+				case 2:		// User chooses dime
+					UserInterface.EnterChangeAmount();
+					depositedAmount += UserInputInt() * 10;
+					UserInterface.EnterChangeConfirm(depositedAmount);
+					break;
+				case 3:		// User chooses nickel
+					UserInterface.EnterChangeAmount();
+					depositedAmount += UserInputInt() * 5;
+					UserInterface.EnterChangeConfirm(depositedAmount);
+					break;
+				case 4:		// User chooses penny
+					UserInterface.EnterChangeAmount();
+					depositedAmount += UserInputInt();
+					UserInterface.EnterChangeConfirm(depositedAmount);
+					break;
+				case 5:   // User completes deposit
+					UserInterface.EnterChangeConfirm(depositedAmount);
+					UserInterface.EnterToContinue();
+					validChoice = true;
+					break;
+				default:
+					UserInterface.ValidationError();
+					UserInterface.EnterToContinue();
+					break;
+			}
+		}
+		
+		// User Input to Int
+		public int UserInputInt()
+		{
+			int i = Convert.ToInt32(Console.ReadLine());
+			return i;
 		}
 	}
 }
